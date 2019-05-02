@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { toggleTodo } from "../reducers";
 
-const TodoList = props =>
+const TodoListDone = props =>
   props.todo
-    .filter(item => !item.done)
+    .filter(item => item.done)
     .map((item, index) => (
-      <li onClick={() => props.toggleTodo(index)} key={index}>
-        {item.content}
+      <li onClick={() => props.toggleTodo(index)}>
+        <s>{item.content}</s>
       </li>
     ));
 
@@ -20,4 +20,4 @@ const mapActionToProps = { toggleTodo };
 export default connect(
   mapStateToProps,
   mapActionToProps
-)(TodoList);
+)(TodoListDone);
