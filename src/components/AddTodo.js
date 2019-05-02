@@ -17,6 +17,7 @@ class AddTodo extends React.Component {
     if (this.state.todo.length <= 0) {
       return alert("You need to type something!");
     }
+
     this.props.addTodo(this.state.todo);
     this.setState({
       todo: ""

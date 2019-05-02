@@ -6,7 +6,7 @@ const TodoList = props =>
   props.todo
     .filter(item => !item.done)
     .map((item, index) => (
-      <li onClick={() => props.toggleTodo(index)} key={index}>
+      <li onClick={() => props.toggleTodo(item.id)} key={index}>
         {item.content}
       </li>
     ));
