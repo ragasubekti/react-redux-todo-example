@@ -5,16 +5,16 @@ import AddTodo from "./components/AddTodo";
 
 function App() {
   return (
-    <div className="App">
-      <div>
+    <div className="m-4">
+      <div style={{ width: "500px" }} className="mb-4">
         <AddTodo />
       </div>
-      <div>
-        <span>Todo List:</span>
+      <div className="mb-4">
+        <b>Todo List:</b>
         <TodoList />
       </div>
       <div>
-        <span>Checked List:</span>
+        <b>Checked List:</b>
         <TodoListDone />
       </div>
     </div>

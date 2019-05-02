@@ -13,7 +13,9 @@ class AddTodo extends React.Component {
     });
   };
 
-  handleSubmit = () => {
+  handleSubmit = e => {
+    e.preventDefault();
+
     if (this.state.todo.length <= 0) {
       return alert("You need to type something!");
     }
@@ -26,14 +28,22 @@ class AddTodo extends React.Component {
 
   render() {
     return (
-      <div>
-        <input
-          onChange={this.handleInputChange}
-          placeholder="New Todo"
-          value={this.state.todo}
-        />
-        <button onClick={this.handleSubmit}>Add</button>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <div className="input-group">
+          <input
+            onChange={this.handleInputChange}
+            placeholder="New Todo"
+            value={this.state.todo}
+            className="form-control"
+            style={{ display: "inline-block" }}
+          />
+          <div className="input-group-append">
+            <button type="submit" className="btn btn-primary">
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
     );
   }
 }

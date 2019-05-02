@@ -6,6 +6,7 @@ import store from "./store";
 import App from "./App";
 
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import * as serviceWorker from "./serviceWorker";
 
